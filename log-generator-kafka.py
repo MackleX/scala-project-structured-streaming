@@ -60,6 +60,7 @@ while True:
         'URI':Path,
         'IP':Ip,
       }
-    producer.send("json-logs-kafka", value=data)
+    producer.send("logs-data", value=data)
+    print("this data been send as message to kafka: " + dumps(data))
     producer.flush()
 
